@@ -1,0 +1,26 @@
+version: '3'
+services:
+  postgres_db:
+    image: postgres
+    environment:
+      POSTGRES_DB: note_app_db
+      POSTGRES_USER: note_app_user
+      POSTGRES_PASSWORD: note_app_passwd
+    ports:
+      - "5432:5432"
+
+  backend:
+    build: ./note_app_backend
+    volumes:
+      - ./note_app_backend:/app
+    ports:
+      - "8000:8000"
+    depends_on:
+      - postgres_db
+
+  frontend:
+    build: ./note_app_frontend
+    volumes:
+      - ./note_app_frontend:/app
+    ports:
+      - "3000:3000"
