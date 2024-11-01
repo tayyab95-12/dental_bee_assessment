@@ -4,7 +4,7 @@ import Header from "./Header";
 import * as PropTypes from "prop-types";
 import Login from "./components/Login";
 
-import React from 'react';
+import React, {useState} from 'react';
 import {BrowserRouter as Router, Routes, Route, Navigate} from 'react-router-dom';
 
 function RouteProps(props){
@@ -23,20 +23,18 @@ RouteComponent.propTypes = {
 };
 
 function App(){
-  const isAuthenticated = !!localStorage.getItem('access_token');
+  const isAuthenticated = !!localStorage.getItem('accessToken');
 
   return (
     <div className="App">
-      <Header/>
       <Router>
+        {isAuthenticated? <Header/> : ""}
+
 
         <Routes>
-          <Route path="/" element={<Login/>}/>
-          <Route
-            path="/notes"
-            element={isAuthenticated ? <Notes/> : <Navigate to="/login"/>}
-          />
-          <Route path="*" element={<Navigate to={isAuthenticated ? "/notes" : "/login"}/>}/>
+          <Route path="/" element={isAuthenticated ? <Navigate to={"/notes"}/> : <Login />}/>
+          <Route path="/notes" element={<Notes/>}/>
+          <Route path="*" element={isAuthenticated ? <Navigate to={"/notes"}/> : <Navigate to={"/"}/>}/>
         </Routes>
       </Router>
     </div>

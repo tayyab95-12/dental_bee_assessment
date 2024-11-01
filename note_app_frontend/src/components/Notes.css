@@ -1,0 +1,112 @@
+.notes-container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: center;
+    font-family: Arial, sans-serif;
+}
+
+h2 {
+    color: #333;
+}
+
+.note-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    background: #f5f5f5;
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.note-input {
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.note-textarea {
+    resize: vertical;
+    height: 100px;
+}
+
+.audio-controls {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.record-button, .submit-button {
+    background-color: #007bff;
+    color: white;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.record-button:hover, .submit-button:hover {
+    background-color: #0056b3;
+}
+
+.notes-list {
+    list-style: none;
+    padding: 0;
+}
+
+.note-item {
+    background: #fff;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    text-align: left;
+}
+
+.note-item h3 {
+    margin: 0;
+    color: #333;
+}
+
+.audio-player {
+    display: block;
+    margin-top: 10px;
+    width: 100%;
+}
+.notes-table {
+    width: 100%;
+    margin-top: 20px;
+    border-collapse: collapse;
+}
+
+.notes-table th,
+.notes-table td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: left;
+}
+
+.notes-table th {
+    background-color: #f2f2f2;
+}
+
+.notes-table .audio-column {
+    width: 200px; /* Adjust width as needed */
+}
+
+.delete-button {
+    background-color: #e74c3c;
+    color: white;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.delete-button:hover {
+    background-color: #c0392b;
+}
